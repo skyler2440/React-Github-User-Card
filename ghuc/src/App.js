@@ -34,7 +34,7 @@ class App extends React.Component {
 console.log(this.state.userCard
   )
     return (
-      <div>
+      <div className='App'>
         <h1>GitHub Stats</h1>
         <UserCard user={this.state.userCard} />
       </div>

@@ -1,5 +1,7 @@
 import React from 'react';
-
+import '../App.css'
+import { Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button } from 'reactstrap';
 class UserCard extends React.Component {
   constructor(props){
       super(props)
@@ -24,24 +26,28 @@ class UserCard extends React.Component {
     console.log(this.state.followersCard)
     return(
         <>
-        <div className='card'>
+        <div className='main-card'>
+        <Card>
         <h2>Username: {this.props.user.login || 'N/A'}</h2>
-        <img src={this.props.user.avatar_url } alt='avatar'/>
+        <CardImg top src={this.props.user.avatar_url } alt='avatar'/>
+        <CardBody>
         <h3>Location: {this.props.user.location || 'N/A'}</h3>
         <h3><a href={this.props.user.html_url || 'N/A'}>Checkout Profile Here</a></h3>
         <h3>Following {this.props.user.following || 'N/A'} users</h3>
         <h3>Has {this.props.user.followers || 'N/A'} followers</h3>
         <h3>Bio: {this.props.user.bio || 'N/A'}</h3>
-        <h1>User's GitHub Followers</h1>
+        </CardBody>
+        </Card>
         </div>
+        <h1>User's GitHub Followers</h1>
         {this.state.followersCard.map(mres => {
             return (
-                <>
+                <Card>
             <h2 key={mres.login}>Username: {mres.login}</h2>
-            <img key={mres.avatar_url} src={mres.avatar_url} alt='avatar'/>
+            <CardImg top key={mres.avatar_url} src={mres.avatar_url} alt='avatar'/>
         <h3><a href={mres.html_url || 'N/A'}>Checkout Profile Here</a></h3>
 
-            </>
+            </Card>
             )
         })}
         </>

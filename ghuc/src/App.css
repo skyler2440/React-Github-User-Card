@@ -1,5 +1,21 @@
+body{
+  background-color: black !important;
+}
 .App {
   text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+}
+.card{
+  background-color: blue!important;
+  border: 3px solid red !important;
+  border-radius: 10%!important;
+}
+.card-img-top{
+  width: 25% !important;
+  margin: 0 auto;
 }
 
 .App-logo {
